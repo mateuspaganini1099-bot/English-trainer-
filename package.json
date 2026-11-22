@@ -1,0 +1,8 @@
+{
+  "name": "english-trainer-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "English Trainer - prática de inglês com correção por IA e treino de voz",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "dotenv": "^16.4.5", "express": "^4.21.2" }
+}
