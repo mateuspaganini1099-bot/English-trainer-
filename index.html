@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c68">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <title>English Trainer</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="brand-icon">EN</span><div><b>ENGLISH TRAINER</b><small>Seu laboratório de inglês</small></div></div>
+    <span class="level">NÍVEL INTERMEDIÁRIO</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">LEARN • PRACTICE • IMPROVE</p>
+        <h1>Let's improve<br>your English!</h1>
+        <p>Pratique conversação, escrita e pronúncia com orientação em português.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">A<span>↗</span></div>
+    </section>
+
+    <nav class="tabs" aria-label="Atividades">
+      <button class="tab active" data-tab="conversation">Conversação</button>
+      <button class="tab" data-tab="writing">Escrita</button>
+      <button class="tab" data-tab="pronunciation">Pronúncia</button>
+      <button class="tab" data-tab="vocabulary">Vocabulário</button>
+    </nav>
+
+    <section class="panel" id="conversation">
+      <div class="section-head"><div><p class="eyebrow">SPEAKING</p><h2>Vamos conversar</h2></div><span class="round-icon">☏</span></div>
+      <label for="topic">Escolha um tema</label>
+      <select id="topic">
+        <option>Cotidiano</option><option>Trabalho e manutenção industrial</option>
+        <option>Viagens</option><option>Restaurantes</option><option>Carros e automóveis</option><option>Filmes e entretenimento</option>
+      </select>
+      <div class="prompt-card">
+        <span class="tag">SUA PERGUNTA</span>
+        <h3 id="conversation-question">What do you usually do during your day?</h3>
+        <p>O que você costuma fazer durante o seu dia?</p>
+        <button class="small-button" id="new-question">Outra pergunta ↻</button>
+      </div>
+      <label for="conversation-input">Sua resposta em inglês</label>
+      <textarea id="conversation-input" placeholder="Write your answer in English..."></textarea>
+      <div class="actions"><button class="primary" data-coach="conversation">Enviar para correção <span>→</span></button><button class="secondary" id="speak-conversation" title="Ditado por voz">🎙 Falar</button></div>
+    </section>
+
+    <section class="panel hidden" id="writing">
+      <div class="section-head"><div><p class="eyebrow">WRITING</p><h2>Corrija sua escrita</h2></div><span class="round-icon">✎</span></div>
+      <p class="muted">Escreva uma frase ou um pequeno texto em inglês. A IA vai explicar os ajustes em português.</p>
+      <textarea id="writing-input" class="tall" placeholder="Yesterday I went to work and had a meeting..."></textarea>
+      <button class="primary full" data-coach="writing">Corrigir meu texto <span>→</span></button>
+    </section>
+
+    <section class="panel hidden" id="pronunciation">
+      <div class="section-head"><div><p class="eyebrow">PRONUNCIATION</p><h2>Treine sua pronúncia</h2></div><span class="round-icon">♫</span></div>
+      <div class="prompt-card">
+        <span class="tag">FRASE DO DIA</span>
+        <h3 id="pronunciation-sentence">I have been working here for five years.</h3>
+        <p>Trabalho aqui há cinco anos.</p>
+        <p class="phonetic">Ai rév bin uôr-kin rír fór fáiv iírs.</p>
+      </div>
+      <div class="actions">
+        <button class="primary" id="listen">🔊 Ouvir em inglês</button>
+        <button class="secondary" id="dictate">🎙 Falar a frase</button>
+      </div>
+      <label for="pronunciation-input">O que o navegador reconheceu</label>
+      <textarea id="pronunciation-input" placeholder="O texto reconhecido pela fala aparecerá aqui..."></textarea>
+      <button class="primary full" data-coach="pronunciation">Analisar minha frase <span>→</span></button>
+      <p class="hint">A leitura em voz alta usa a voz disponível no navegador. O reconhecimento de fala transforma sua voz em texto; isso não mede com precisão todos os sons ou sua entonação.</p>
+    </section>
+
+    <section class="panel hidden" id="vocabulary">
+      <div class="section-head"><div><p class="eyebrow">VOCABULARY</p><h2>Palavras úteis</h2></div><span class="round-icon">Aa</span></div>
+      <div class="word-list">
+        <article><b>Maintenance</b><span>Manutenção</span><p>I work in industrial maintenance.</p></article>
+        <article><b>Equipment</b><span>Equipamento</span><p>The equipment needs maintenance.</p></article>
+        <article><b>Failure</b><span>Falha</span><p>We identified a failure in the pump.</p></article>
+        <article><b>Leak</b><span>Vazamento</span><p>There is an air leak in the valve.</p></article>
+        <article><b>Improvement</b><span>Melhoria</span><p>We need to improve the process.</p></article>
+      </div>
+      <button class="primary full" data-coach="vocabulary">Praticar vocabulário <span>→</span></button>
+    </section>
+
+    <section class="result hidden" id="result">
+      <div class="result-head"><span class="round-icon">✓</span><div><p class="eyebrow">FEEDBACK</p><h2>Correção do professor</h2></div></div>
+      <div id="result-content"></div>
+      <button class="secondary" id="copy-result">Copiar correção</button>
+    </section>
+
+    <section class="daily">
+      <div><p class="eyebrow">ROTINA SUGERIDA</p><h2>15 minutos por dia</h2><p>Pequenas práticas frequentes ajudam a ganhar confiança.</p></div>
+      <div class="minutes"><span>05</span> Conversação <span>05</span> Escrita <span>05</span> Voz</div>
+    </section>
+    <p class="footer">English Trainer · Feito para apoiar sua prática diária</p>
+  </main>
+  <div class="toast hidden" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+  <script>if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("/service-worker.js").catch(() => {}));</script>
+</body>
+</html>
